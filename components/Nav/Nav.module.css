@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding-top: 0.75rem;
+}
+.link{
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+.image{
+    object-fit: contain;
+}
+.logo_text {
+    display: block; /* Hidden by default */
+    font-weight: 600; /* Equivalent to font-semibold */
+    font-size: 1.125rem; /* Equivalent to text-lg */
+    color: #000; /* Equivalent to text-black */
+    letter-spacing: 0.05em; /* Equivalent to tracking-wide */
+  }
+  
+  @media (max-width: 640px) {
+    .logo_text {
+      display: none; /* Displayed on small screens */
+    }
+  }
