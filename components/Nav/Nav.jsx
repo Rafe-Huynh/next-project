@@ -30,11 +30,11 @@ const Nav = () => {
             <p className={styles.logo_text}>Promptopia</p>
         </Link>
         <div className={styles.small}>
-            {session?.user ? (<div className={styles.UserLogined}><Link href="/create-promp" className={styles.btn}> Create Post
+            {session?.user ? (<div className={styles.UserLogined}><Link href="/create-prompt" className={styles.btn}> Create Post
             </Link>
             <button type='button' onClick={signOut} className={styles.btn_signout}>Sign Out</button>
             <Link href="/profile">
-                <Image src="/images/logo.svg" width={37} height={37} className={styles.profileImg} alt="profile" />
+                <Image src={session?.user.image} width={37} height={37} className={styles.profileImg} alt="profile" />
             </Link>
             </div>) 
             
@@ -51,7 +51,7 @@ const Nav = () => {
         <div className={styles.mobile}>
             {session?.user ? 
             (<div className={styles.flex}>
-                <Image src="/images/logo.svg" width={37} height={37} className={styles.profileImg} alt="profile"
+                <Image src={session?.user.image} width={37} height={37} className={styles.profileImg} alt="profile"
                 onClick={() =>setDropDown((prev) => !prev)}
                 />
                 {
