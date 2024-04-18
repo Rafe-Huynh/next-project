@@ -27,7 +27,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                 <div className={styles.btn}>
                     <button className={styles.submitbtn}>
                     <Link href="/"className={styles.link} >
-                        Cancel
+                        Cancel 
                     </Link>
                     </button>
                     <button type="submit" disabled={submitting} className={styles.submitbtn}>
