@@ -1,0 +1,75 @@
+.container{
+    flex: 1;
+  break-inside: avoid;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: fit-content;
+}
+.cards{
+    display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 1.25rem;
+}
+.card{
+    flex: 1; 
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 0.75rem; 
+  cursor: pointer;
+}
+.userImage{
+    border-radius: 50%; 
+  object-fit: contain;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-family: 'Satoshi', sans-serif; 
+  font-weight: 600; 
+  color: #111827;
+}
+.email{
+    font-family: 'Inter', sans-serif; 
+  font-size: 0.875rem; 
+  color: #6b7280;
+}
+.copybtn{
+    width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 10px -50px 94px 0 rgba(199, 199, 199, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.prompt{
+    margin-top: 1rem;
+  margin-bottom: 1rem; 
+  font-family: 'Satoshi', sans-serif; 
+  font-size: 0.875rem; 
+  color: #4b5563;
+}
+.tag{
+    font-family: 'Inter', sans-serif; 
+  font-size: 0.875rem; 
+  color: linear-gradient(135deg, #4f46e5, #8f94fb); 
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+    .container {
+      max-width: 22.5rem;
+    }
+  }

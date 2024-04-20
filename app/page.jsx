@@ -10,7 +10,7 @@ const Home = () => {
         <p className={styles.desc}>
           Open-source AI prompting tool, Create and share creative prompts
         </p>
-      <Feed/> 
+      <Feed/>
     </section>
   )
 }

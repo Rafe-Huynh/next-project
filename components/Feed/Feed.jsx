@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 import styles from "./Feed.module.css"
 import PromptCard from '../PromptCard/PromptCard'
- const PromptCardList = ({data, handleTagClick}) =>{
+const PromptCardList = ({data, handleTagClick}) =>{
   return (
     <div className={styles.cards}>
 {data.map((post) => (
@@ -24,6 +24,16 @@ const Feed = () => {
   const handleTagClick = () => {
     
   };
+  const fetchPosts = async () => {
+    const response = await fetch("/api/prompt");
+    const data = await response.json();
+
+    setAllPosts(data);
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
   return (
     <section className={styles.container}>
       <form className={styles.form}>
