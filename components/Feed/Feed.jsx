@@ -1,8 +1,43 @@
+"use client"
+import { useState, useEffect } from 'react'
 import React from 'react'
+import styles from "./Feed.module.css"
+import PromptCard from '../PromptCard/PromptCard'
+ const PromptCardList = ({data, handleTagClick}) =>{
+  return (
+    <div className={styles.cards}>
+{data.map((post) => (
+  <PromptCard 
+  key={post._id}
+  post = {post}
+  handleTagClick={handleTagClick}
+  />
+))}
+
+    </div>
+  )
+ }
 
 const Feed = () => {
+  
+  const [allPosts, setAllPosts] = useState([])
+  const handleTagClick = () => {
+    
+  };
   return (
-    <div>Feed</div>
+    <section className={styles.container}>
+      <form className={styles.form}>
+            <input type='text'
+            placeholder='Search for a tag ...'
+            required
+            className={styles.input}
+            />
+      </form>
+      <PromptCardList 
+      data = {allPosts}
+      handleTagClick = {handleTagClick}
+      />
+    </section>
   )
 }
 
