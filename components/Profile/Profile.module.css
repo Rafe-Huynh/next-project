@@ -1,7 +1,31 @@
+.container{
+    width: 100%;
+}
+.title{
+    margin-top: 1.25rem; 
+    font-size: 3.75rem; 
+    font-weight: 800; 
+    line-height: 1.15; 
+    color: black
+}
+.desc{
+    margin-top: 1.25rem; 
+    font-size: 1.125rem; 
+    color: #4b5563; 
+    max-width: 36rem;
+}
 .cards {
     --space-y: 1.5rem; 
     padding-top: 2rem; 
     padding-bottom: 2rem; 
     --columns-sm: 2; 
     --columns-xl: 3; 
+  }
+  @media (min-width: 640px) {
+    .title {
+      font-size: 4.5rem; 
+    }
+    .desc{
+        font-size: 1.25rem;
+    }
   }

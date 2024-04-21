@@ -6,8 +6,12 @@ import { useSession } from 'next-auth/react'
 import { usePathname, useRouter } from 'next/navigation'
 import { FaCopy } from "react-icons/fa6";
 import styles from './PromptCard.module.css'
+import { FaRegTrashAlt } from "react-icons/fa";
+import { TiEdit } from "react-icons/ti";
 const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
   const [copied, setCopied] = useState("")
+  const pathName =usePathname()
+  const router = useRouter()
   const { data: session } = useSession();
   const handlecopy = () =>{
     setCopied(post.prompt)
@@ -33,8 +37,20 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             </div>
         </div>
         <p className={styles.prompt}>{post.prompt}</p>
-        <p className={styles.tag} onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+        <p className={styles.tag} onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p> 
+        
+        {session?.user.id === post.creator._id && pathName === '/profile' && (
+          <div className={styles.btn}> 
+            <button className={styles.editbtn} onClick={handleEdit} data-message="Edit">
+              <TiEdit size={20}/>
+            </button>
+            <button className={styles.deletebtn} onClick={handleDelete} data-message={"Delete"}>
+              <FaRegTrashAlt size={20} />
+            </button>
+             </div>
+        ) } 
     </div>
+
   )
   
 }

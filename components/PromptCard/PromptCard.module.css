@@ -68,6 +68,60 @@
   color: linear-gradient(135deg, #4f46e5, #8f94fb); 
   cursor: pointer;
 }
+.btn{
+  margin-top: 1.25rem; 
+  display: flex; 
+  justify-content: center; 
+  gap: 1rem; 
+  border-top: 1px solid #e5e7eb; 
+  padding-top: 0.75rem;
+}
+.editbtn{
+  cursor: pointer;
+}
+.deletebtn{
+  cursor: pointer;
+  color: red;
+}
+.editbtn::after{
+  content: attr(data-message);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.deletebtn::after {
+  content: attr(data-message);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+}
+.editbtn:hover:after{
+  opacity: 1;
+}
+.deletebtn:hover::after {
+  opacity: 1;
+}
 @media (min-width: 768px) {
     .container {
       max-width: 22.5rem;
