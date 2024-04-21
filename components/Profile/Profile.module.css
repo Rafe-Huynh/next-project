@@ -1,0 +1,7 @@
+.cards {
+    --space-y: 1.5rem; 
+    padding-top: 2rem; 
+    padding-bottom: 2rem; 
+    --columns-sm: 2; 
+    --columns-xl: 3; 
+  }

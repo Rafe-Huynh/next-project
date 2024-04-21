@@ -1,7 +1,7 @@
-import Prompt from "../../../models/prompt"
-import { connectToDB } from "../../../utils/database"
+import Prompt from "../../../../../models/prompt"
+import { connectToDB } from "../../../../../utils/database"
 
-export const GET = async (request, { params }) => {
+export const GET = async (request, { params }) => { // access to param.id for specific user
     try {
         await connectToDB()
 
