@@ -21,6 +21,9 @@ const PromptCardList = ({data, handleTagClick}) =>{
 const Feed = () => {
   
   const [allPosts, setAllPosts] = useState([])
+  const [searchText, setSearchText] = useState("")
+  const [searchTimeout, setSearchTimeout] = useState(null)
+  const [searchedResults, setSearchedResults] = useState([])
   const handleTagClick = () => {
     
   };
@@ -34,19 +37,41 @@ const Feed = () => {
   useEffect(() => {
     fetchPosts();
   }, []);
+  const filterPrompts = (searchText) => {
+    const regex = new RegExp(searchText, "i")// i flag for case insensitive search
+    return allPosts.filter((item) => 
+      regex.test(item.creator.username) || regex.test(item.tag) || regex.test(item.prompt)
+    )
+  }
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout)
+    setSearchText(e.target.value)
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResults = filterPrompts(e.target.value)
+        setSearchedResults(searchResults)
+      },500)
+    )
+  }
+
   return (
     <section className={styles.container}>
       <form className={styles.form}>
             <input type='text'
             placeholder='Search for a tag ...'
             required
+            onChange={handleSearchChange}
             className={styles.input}
             />
       </form>
+      {searchText? (<PromptCardList 
+      data = {searchedResults}
+        />
+    ):
       <PromptCardList 
       data = {allPosts}
       handleTagClick = {handleTagClick}
-      />
+      />}
     </section>
   )
 }
