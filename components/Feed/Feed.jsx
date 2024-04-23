@@ -24,9 +24,7 @@ const Feed = () => {
   const [searchText, setSearchText] = useState("")
   const [searchTimeout, setSearchTimeout] = useState(null)
   const [searchedResults, setSearchedResults] = useState([])
-  const handleTagClick = () => {
-    
-  };
+  
   const fetchPosts = async () => {
     const response = await fetch("/api/prompt");
     const data = await response.json();
@@ -53,7 +51,11 @@ const Feed = () => {
       },500)
     )
   }
-
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName)
+    const result = filterPrompts(tagName)
+    setSearchedResults(result)
+  };
   return (
     <section className={styles.container}>
       <form className={styles.form}>
@@ -66,6 +68,7 @@ const Feed = () => {
       </form>
       {searchText? (<PromptCardList 
       data = {searchedResults}
+      handleTagClick={handleTagClick}
         />
     ):
       <PromptCardList 

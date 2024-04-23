@@ -19,12 +19,17 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
     setTimeout(() => setCopied(""), 3000)
 
   }
+  const handleProfileClick = () =>{
+    if (post.creator._id === session?.user.is) return router.push("/profile")
+    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`)
+  }
   return (
     
     <div className={styles.container}>
       
         <div className={styles.cards}>
-            <div className={styles.card}>
+            <div className={styles.card} onClick={handleProfileClick}
+            >
               <Image src={post.creator.image} alt = "user image" width={40} height={40} className={styles.userImage}/>
               <div className={styles.user}>
                   <h3 className={styles.title}>{post.creator.username}</h3>
