@@ -35,18 +35,21 @@ position: relative;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .input:focus{
-    border-color: #000000; 
+  border-color: #000000; 
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 .cards {
-    --space-y: 1.5rem; 
-    padding-top: 2rem; 
-    padding-bottom: 2rem; 
-    --columns-sm: 2; 
-    --columns-xl: 3; 
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-y);
+  --space-y: 4rem; 
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  --columns-sm: 4; 
+  grid-template-columns: repeat(var(--columns-sm), 1fr);
   }
-  
-  
+
   @media (min-width: 640px) {
     .cards {
       --space-y: 1.5rem; 

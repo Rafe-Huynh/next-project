@@ -66,6 +66,7 @@ const Feed = () => {
             className={styles.input}
             />
       </form>
+      
       {searchText? (<PromptCardList 
       data = {searchedResults}
       handleTagClick={handleTagClick}

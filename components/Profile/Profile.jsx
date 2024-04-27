@@ -4,7 +4,7 @@ import styles from "./Profile.module.css"
 const Profile = ({name, desc, data, handleEdit, handleDelete}) => {
   return (
     <section className={styles.container}>
-        <h1 className={styles.title}>{name} Profile </h1>
+        <h1 className={styles.title}>{name}'s Profile </h1>
         <p className={styles.desc}>
            {desc}
         </p>

@@ -8,9 +8,12 @@
     margin-top: 5px;
     font-size: 3rem;
     font-weight: 800;
-    line-height: 1.25rem;
-    color: black;
+    line-height: 5rem;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background-clip: text;
+    color: transparent; /* Set text color to transparent */
   }
+  
   @media (min-width: 640px) {
     .head_text {
       font-size: 4rem; 

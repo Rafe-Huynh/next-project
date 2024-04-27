@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import {signIn, signOut, useSession, getProviders} from 'next-auth/react'
 import styles from "./Nav.module.css"
+import logo from "../../public/images/logo.png"
 const Nav = () => {
     const {data: session} = useSession()
     const [providers, setProviders] = useState(null)
@@ -21,13 +22,13 @@ const Nav = () => {
     <nav className={styles.container}> 
         <Link href="/" className={styles.link} >
             <Image 
-            src ="/images/logo.svg"
+            src ={logo}
             alt ="logo"
             width={30}
             height={30}
             className={styles.image}
             />
-            <p className={styles.logo_text}>Promptopia</p>
+            <p className={styles.logo_text}>Promptville</p>
         </Link>
         <div className={styles.small}>
             {session?.user ? (<div className={styles.UserLogined}><Link href="/create-prompt" className={styles.btn}> Create Post
