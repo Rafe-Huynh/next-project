@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import Form from '../../components/Form/Form'
+import { Suspense } from "react";
 const EditPrompt = () => {
     const router = useRouter()
     const SearchParam = useSearchParams()
@@ -51,5 +52,12 @@ const EditPrompt = () => {
     <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handleSubmit={editPrompt}/>
   )
 }
+const Page = () => {
+  return (
+      <Suspense>
+          <EditPrompt />
+      </Suspense>
+  )
+}
 
-export default EditPrompt
+export default Page
