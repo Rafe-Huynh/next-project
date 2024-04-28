@@ -3,7 +3,7 @@ import React, { Children } from 'react'
 import Nav from "../components/Nav/Nav"
 import Provider from "../components/Provider/Provider"
 export const metadata = {
-  title: "Promtopia",
+  title: "PromtpVille",
   description: "discover and share"
 }
 
