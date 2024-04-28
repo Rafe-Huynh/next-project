@@ -46,7 +46,7 @@ position: relative;
   --space-y: 4rem; 
   padding-top: 2rem;
   padding-bottom: 2rem;
-  --columns-sm: 4; 
+  --columns-sm: 3; 
   grid-template-columns: repeat(var(--columns-sm), 1fr);
   }
 
