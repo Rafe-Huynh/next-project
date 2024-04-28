@@ -6,13 +6,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <section className={styles.container}>
             <h1 className={styles.title}><span>{type} Post</span></h1>
             <p className={styles.desc}>
-                {type} and share amazing prompts
+                {type} prompt
 
             </p>
             <form onSubmit={handleSubmit} className={` ${styles.form} ${styles.glassmorphism}`}>
                 <label>
                     <span className={styles.label}>
-                        Your AI Prompt
+                        Your Prompt
                     </span>
                     <textarea value={post.prompt} onChange={(e) => setPost({ ...post, prompt: e.target.value })} placeholder="write your prompt..."
                     required className={styles.textarea}/>
