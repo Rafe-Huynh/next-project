@@ -11,7 +11,9 @@ if(isConnected){
 }
 try {
    await mongoose.connect(process.env.URI, {
-    dbName: "share_prompt"
+    dbName: "share_prompt",
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
    })
    isConnected = true;
    console.log("mongoose connected")

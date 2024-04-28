@@ -42,7 +42,7 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             </div>
         </div>
         <p className={styles.prompt}>{post.prompt}</p>
-        <p className={styles.tag} onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p> 
+        <p className={styles.tag} onClick={() => handleTagClick && handleTagClick(post.tag)}>#{post.tag}</p> 
         
         {session?.user.id === post.creator._id && pathName === '/profile' && (
           <div className={styles.btn}> 
